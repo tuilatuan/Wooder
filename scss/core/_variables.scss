@@ -1,0 +1,31 @@
+//layout
+$max-width: 2400px;
+$container-max-width: 1600px;
+$container-width: 1005px;
+
+//color
+$nau-cl: #af9b78;
+$h2-cl: #bea67c;
+$gray-cl-hover: #ececec;
+$yellow-cl-h2: #bea67c;
+
+//font
+$font-size-basic: 16px;
+$font-size-h3: 40px;
+$font-size-h3res: 30px;
+//padding
+$padding-res: 50px;
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+//time
+$trans-time: 0.3s;

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico">
+    <title>Wonder</title>
+   <!-- meta facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./dest/style.min.css" />
+    <style>
+          @font-face {
+      font-family: "pne";
+      src: url("./fonts/ProximaNovaA-Extrabld.woff2") format("woff2"),
+        url("./fonts/ProximaNovaA-Extrabld.woff") format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: fallback;
+     }
+
+    @font-face {
+      font-family: "pnr";
+      src: url("./fonts/ProximaNova-Regular.woff2") format("woff2"),
+        url("./fonts/ProximaNova-Regular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: "pnb";
+      src: url("./fonts/ProximaNova-Bold.woff2") format("woff2"),
+        url("./fonts/ProximaNova-Bold.woff") format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: fallback;
+    }
+    </style>
+  
+  </head>
+  <body>
+   
+    <header id="header">
+       <div class="topbar"></div>
+      <div class="container-fluid">
+        <div class="header__logo">
+          <a href="#">
+            <img src="./img/logo.png" alt="" />
+            <!-- <span class="hiden">WOODER</span> -->
+          </a>
+        </div>
+        <nav class="nav">
+          
+            <a href="#slider" class="active">SLIDER</a>
+            <a href="#product">PRODUCTS</a>
+            <a href="#video">VIDEO</a>
+            <a href="#about">ABOUT</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#news">NEWS</a>
+        
+        </nav>
+        <div class="header__langue">
+          <div class="header__langue-select">
+            <span>EN</span>
+            <img src="./img/arroww-lange.png" alt="" />
+          </div>
+          <div class="header__langue-option">
+            <a href="">VN</a>
+            <a href="">JP</a>
+            <a href="">FR</a>
+          </div>
+          <div class="header__langue-hiden">
+            <span class="icon" ></span>
+          </div>
+        </div>
+      </div>
+      <div id="nav__mobile">
+          <ul>
+            <a href="#slider" class="active">HOME</a>
+            <a href="#product">PRODUCTS</a>
+            <a href="#video">VIDEO</a>
+            <a href="#about">ABOUT</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#news">NEWS</a>
+          </ul>
+        </div>
+    </header>
+    <main>
+      <section class="slider">
+        <div class="slider__item-warp">
+          <div class="slider__item ">
+            <div class="slider__item-content">
+              <h2 class="title --h2" 0>WOODER</h2>
+              <div class="slider-btn">
+                <a href=""
+                  >LEARN MORE <i><img src="./img/arrow-2x-30px-right.png" alt=""
+                /></i></a>
+              </div>
+            </div>
+            <img class="img" src="./img/slide1.jpg" alt="" />
+          </div>
+          <div class="slider__item ">
+            <div class="slider__item-content">
+              <h2 class="title --h2" 0>WOODER</h2>
+              <div class="slider-btn">
+                <a href=""
+                  >LEARN MORE <i><img src="./img/arrow-2x-30px-right.png" alt=""
+                /></i></a>
+              </div>
+            </div>
+            <img class="img" src="./img/slide2.jpg" alt="" />
+          </div>
+          <div class="slider__item">
+            <div class="slider__item-content">
+              <h2 class="title --h2" 0>WOODER</h2>
+              <div class="slider-btn">
+                <a href=""
+                  >LEARN MORE <i><img src="./img/arrow-2x-30px-right.png" alt=""
+                /></i></a>
+              </div>
+            </div>
+            <img class="img" src="./img/slide3.jpg" alt="" />
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="slider__active">
+            <div class="slider__active-left">
+              <span>01</span>
+              <div class="dotted"></div>
+            </div>
+            <div class="slider__active-past">
+             <div class="mouse"><img src="./img/mouse-2x-17px.png" alt=""></div>
+              <div class="imgarrow"><img  src="./img/line-aroow-2x-9px.png" alt=""></div>
+            </div>
+            <div class="slider__active-right">
+              <a class="btnslider prev" href=""><img src="./img/arrow-2x-30px-right.png" alt=""></a>
+              <a class="btnslider next" href=""><img src="./img/arrow-2x-30px-right.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product" >
+        <div class="container">
+          <div class="product__furniture" data-aos="fade-right"data-aos-anchor-placement="center-bottom">
+            <div class="product__furniture-content">
+              <h3 class="heading --h3 fur">FURNITURE</h3>
+              <p class="content-text">
+                Wooder utilizes materials otherwise left behind, rendered
+                useless in their origin-al intent. By creating new pieces made
+                of reclaimed barnwood
+              </p>
+              <div class="content-learn">
+                <a href=""
+                  >LEARN MORE
+                  <i><img src="./img/arrow-brown-30px-right.png" alt="" /></i>
+                </a>
+              </div>
+            </div>
+            <div class="product__furniture-img">
+              <img src="./img/furniture-img.jpg" alt="" />
+            </div>
+          </div>
+          <div class="product__furniture furniture-reverse" data-aos="fade-left">
+            <div class="product__furniture-content">
+              <div>
+                <h3 class="heading --h3 decor">DECOR</h3>
+              </div>
+              <div>
+                <p class="content-text">
+                  We make all types of wooden decor as per design given by
+                  Architect,Interior designer, contractor which is suitable your
+                  premises.
+                </p>
+              </div>
+              <div class="content-learn">
+                <a href=""
+                  >LEARN MORE
+                  <i><img src="./img/arrow-brown-30px-right.png" alt="" /></i>
+                </a>
+              </div>
+            </div>
+            <div class="product__furniture-img">
+              <img src="./img/dercor-img.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="video" >
+        <div class="container" >
+          <h3 class="heading --h3" data-aos="fade-up">WOODER - IS QUALITTY</h3>
+          <p class="video__text"data-aos="fade-up" >
+            We create unique design objects made of rare wood, specially under
+            the order. Look at the short video about our work.
+          </p>
+          <div class="video__item" data-aos="zoom-in-up">
+            <div class="video__item-box">
+              <div class="box__img">
+                <img class="img__main" src="./img/qualyti-img1.jpg" alt="" />
+                <div class="btnplay" data-video-id="PebLShakKCE">
+                  <img class="imgbtn" src="./img/btn_play.png" alt=""/>
+                </div>
+              </div>
+              <div class="box__content">
+                <span class="box__content-text">Innovative Design</span>
+              </div>
+            </div>
+              <div class="video__item-box">
+              <div class="box__img">
+                <img class="img__main" src="./img/qualyti-img2.jpg  " alt="" />
+                <div class="btnplay" data-video-id="vNOiXpRSH6c">
+                  <img class="imgbtn" src="./img/btn_play.png" alt=""/>
+                </div>
+              </div>
+              <div class="box__content">
+                <span class="box__content-text">Innovative Design</span>
+              </div>
+            </div>
+              <div class="video__item-box">
+              <div class="box__img">
+                <img class="img__main" src="./img/qualyti-img3.jpg" alt="" />
+                <div class="btnplay" data-video-id="1So7VBehCQg">
+                  <img class="imgbtn" src="./img/btn_play.png" alt=""/>
+                </div>
+              </div>
+              <div class="box__content">
+                <span class="box__content-text">Innovative Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <section class="wedo">
+        <div class="container" data-aos="fade-left"data-aos-anchor-placement="center-bottom">
+          <h3 class="wedo__heading --h3">WE DO THE DESIGN OF ANY COMPLEXITY</h3>
+          <p class="wedo__content">
+            This is a team of professionals that make the furniture and </br> wood
+            décor high standard. Creating modern designs.</br> Adhering to the global
+            quality standards. And we are doing work with love.
+          </p>
+          <a href="#"
+            ><img src="./img/btn-banner video@2x.png" alt="" /> WATCH VIDEO</a
+          >
+        </div>
+      </section>
+      <section class="about">
+        <div class="container" data-aos="zoom-in-up">
+          <div class="about__img">
+            <img src="./img/about-img.jpg" alt="">
+          </div>
+          <div class="about__content">
+            <h3 class="heading --h3">ABOUT US</h3>
+            <p class="about__content-text" >We are a team of professionals in the wood processing and the creation of wooden furniture 
+of the highest class</p>
+            <div class="content-learn">
+                <a href=""
+                  >LEARN MORE
+                  <img src="./img/arrow-brown-30px-right.png" alt="" />
+                </a>
+             </div>
+          </div>
+        </div>
+      </section>
+      <div class="gallery">
+        <div class="container">
+          <h3 class="heading --h3" data-aos="fade-left">GALLERY</h3>
+          <p class="gallery__text" data-aos="fade-right">We are a team of professionals in the wood processing and 
+the creation of wooden furniture of the highest class</p>
+        <div class="gallery__img "data-aos="zoom-in">
+          <a data-fancybox="gallery" data-src="./img/gallery-img-zoom.jpg" href=""><img src="./img/gallery-img1.jpg" alt="Wooder"></a>
+          <a data-fancybox="gallery" data-src="./img/gallery-img2-zoom.jpg"href=""><img src="./img/gallery-img2.jpg" alt="Wooder"></a>
+          <a data-fancybox="gallery" data-src="./img/gallery-img3-zoom.jpg"href=""><img src="./img/gallery-img3.jpg" alt="Wooder"></a>
+          <a data-fancybox="gallery" data-src="./img/gallery-img4-zoom.jpg"href=""><img src="./img/gallery-img4.jpg" alt="Wooder"></a>
+          <a data-fancybox="gallery" data-src="./img/gallery-img5-zoom.jpg"href=""><img src="./img/gallery-img5.jpg" alt="Wooder"></a>
+        </div>
+        </div>
+      </div>
+      <section class="news">
+        <div class="container">
+          <h2 class="heading --h3">NEWS</h2>
+          <p class="news__content">
+            We are a team of professionals in the wood processing and 
+the creation of wooden furniture of the highest class
+          </p>
+          <div class="news__btn btnhiden">
+            <a class="active" href="">Internal</a>
+
+            <a href="">External</a>
+          </div>
+          <div class="news-group" data-aos="zoom-out-down" >
+            <div class="news__box active">
+            <div class="news__box-item">
+              <div class="img">
+              <a href=""><img src="./img/news-img1.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <a href="">WHERE DOES IS COME FROM?</a>
+                <p>Contrary to popular belief, Lorem Ipsum 
+                    is not simply random text. It has roots 
+                    in a piece of classical Latin literatur..</p>
+              </div>
+            </div>
+            <div class="news__box-item">
+              <div class="img">
+              <a href=""><img src="./img/news-img2.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <a href="">THERE ARE MANY 
+                  VARIATIONS OF PASSAGES</a>
+                <p>Contrary to popular belief, Lorem Ipsum 
+                    is not simply random text. It has roots 
+                    in a piece of classical Latin literatur..</p>
+              </div>
+            </div>
+            <div class="news__box-item">
+              <div class="img">
+              <a href=""><img src="./img/news-img3.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <a href="">IT IS A LONG ESTABLISHED
+                   FACT THAT AREADER</a>
+                <p>Contrary to popular belief, Lorem Ipsum 
+                    is not simply random text. It has roots 
+                    in a piece of classical Latin literatur...</p>
+              </div>
+            </div>
+          </div>
+           <div class="news__box">
+            <div class="news__box-item">
+              <div class="img">
+              <a href=""><img src="./img/news-img3.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <a href="">THERE ARE MANY 
+                  VARIATIONS OF PASSAGES</a>
+                <p>Contrary to popular belief, Lorem Ipsum 
+                    is not simply random text. It has roots 
+                    in a piece of classical Latin literatur..</p>
+              </div>
+            </div>
+            <div class="news__box-item">
+              <div class="img">
+              <a href=""><img src="./img/transimg4-clone.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <a href="">WHERE DOES IS COME FROM?</a>
+                <p>Contrary to popular belief, Lorem Ipsum 
+                    is not simply random text. It has roots 
+                    in a piece of classical Latin literatur..</p>
+              </div>
+            </div>
+            <div class="news__box-item">
+              <div class="img">
+              <a href=""><img src="./img/news-img2.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <a href="">IT IS A LONG ESTABLISHED
+                   FACT THAT AREADER</a>
+                <p>Contrary to popular belief, Lorem Ipsum 
+                    is not simply random text. It has roots 
+                    in a piece of classical Latin literatur...</p>
+              </div>
+            </div>
+          </div> 
+          </div>
+        </div>
+      </section>
+      <section class="transimg">
+        <div class="transimg__group-warp">
+          <img class="item" src="./img/transimg1-clone.jpg" alt="wooder">
+          <img class="item" src="./img/transimg2.jpg" alt="wooder">
+          <img class="item" src="./img/transimg3.jpg" alt="wooder">
+          <img class="item" src="./img/transimg4-clone.jpg" alt="wooder">
+          <img class="item" src="./img/transimg6.jpg" alt="wooder">
+          <img class="item" src="./img/transimg7.jpg" alt="wooder">
+          <img class="item" src="./img/transimg8.jpg" alt="wooder">
+        </div>
+          <div class="bar"><div class="progress-bar" style="width: 5%;"></div></div>
+      </section>
+    </main>
+    <div class="totop">
+      <span>BACK TO TOP</span>
+    </div>
+    
+    <footer id="footer">
+      <div class="container">
+        <p class="copy" >© 2016 WOODER, Demo by CFD</p>
+        <a href="#" class="logo__footer"><img src="./img/logo.png" alt=""></a>
+        <a href="" onclick="backtoTop()">BACK TO TOP</a>
+      </div>
+    </footer>
+    <div class="popup-video">
+      <div class="iframe-wrap">
+        <iframe  class="popup__iframe" src="https://www.youtube.com/embed/vNOiXpRSH6c?autoplay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="close">x</div>
+      </div>
+      
+    </div>
+   <script src="./dest/jsmain.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+#footer {
+  background: #000;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+  }
+
+  p {
+    font-size: 12px;
+    font-family: pnr;
+    line-height: 20.83px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .logo__footer {
+    @include mid;
+    margin-top: 0;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14.4px;
+    font-family: pnr;
+    line-height: 25px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+  }
+  @include xs {
+    .container {
+      flex-direction: column;
+      height: auto;
+      padding: 25px 0;
+      gap: 15px;
+    }
+  }
+}
+.totop {
+  position: fixed;
+  bottom: 50px;
+  width: 100px;
+  height: 20px;
+  right: 5px;
+  @include midlflex;
+  transform: rotate(-90deg);
+  cursor: pointer;
+  pointer-events: none;
+  transition: $trans-time;
+  opacity: 0;
+  color: #fff;
+  mix-blend-mode: difference;
+  span {
+    font-size: 13px;
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: $trans-time;
+  }
+}

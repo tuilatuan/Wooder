@@ -1,0 +1,230 @@
+#header {
+  z-index: 5;
+  position: relative;
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    &.active {
+      height: 66px;
+      background: #000;
+      transition: $trans-time;
+    }
+  }
+  .nav {
+    height: 100%;
+    position: absolute;
+    @include midlflex;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    a {
+      position: relative;
+      text-decoration: none;
+      font-size: 15px;
+      font-family: pnb;
+      color: #fff;
+      line-height: 22.5px;
+      margin: 31px 25px;
+      transition: $trans-time;
+
+      &.active {
+        color: $nau-cl;
+      }
+      &:hover {
+        color: $gray-cl-hover;
+        opacity: 0.9;
+        &::after {
+          overflow: hidden;
+          @include transform(scaleX(1));
+          @include transition($trans-time);
+        }
+      }
+      &::after {
+        content: "";
+        background: $nau-cl;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 22px;
+        @include transform(scaleX(0));
+        @include transition($trans-time);
+      }
+    }
+  }
+  .header__langue {
+    @include midlflex;
+    .header__langue-select {
+      position: relative;
+      @include midlflex;
+      cursor: pointer;
+      span {
+        color: #fff;
+        font-family: pnb;
+        margin-right: 5px;
+        text-decoration: none;
+        padding: 5px;
+      }
+      &.active {
+        pointer-events: auto;
+        span {
+          color: $nau-cl;
+        }
+      }
+    }
+
+    .header__langue-option {
+      position: absolute;
+      @include midlflex;
+      flex-direction: column;
+      top: 60px;
+      background: #fff;
+      opacity: 0;
+      pointer-events: none;
+      transition: $trans-time;
+
+      width: 40px;
+      a {
+        color: #000;
+        font-family: pnb;
+        text-decoration: none;
+        padding: 5px 7px;
+      }
+      a:hover {
+        color: $nau-cl;
+      }
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transition: $trans-time;
+      }
+    }
+    &-hiden {
+      display: none;
+      margin-left: 10px;
+      transition: $trans-time;
+      span {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: $nau-cl;
+        position: relative;
+        margin-left: 10px;
+      }
+      &.header__langue-hiden::after,
+      &.header__langue-hiden::before {
+        content: "";
+        display: table;
+        width: 40px;
+        height: 3px;
+        background: $nau-cl;
+      }
+      &.header__langue-hiden::after {
+        margin-top: 14px;
+        margin-left: 10px;
+      }
+      &.header__langue-hiden::before {
+        margin-bottom: 14px;
+        margin-left: 10px;
+      }
+      &.active {
+        transition: $trans-time;
+        span {
+          opacity: 0;
+        }
+
+        &.header__langue-hiden::after {
+          transform: rotate(45deg) translate(2px, -20px);
+          margin-top: 0;
+          margin-left: 0;
+        }
+        &.header__langue-hiden::before {
+          margin-top: 0;
+          margin-left: 0;
+          transform: rotate(-45deg) translate(5px, 15px);
+        }
+      }
+    }
+  }
+
+  #nav__mobile {
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    background: #000;
+    height: 95vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: $trans-time;
+
+    ul {
+      margin: 0 auto;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80%;
+      gap: 30px;
+      a {
+        font-size: 20px;
+        text-decoration: none;
+        font-family: pnb;
+        color: #fff;
+      }
+      .active {
+        color: $nau-cl;
+      }
+    }
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+      transition: $trans-time;
+    }
+  }
+  .topbar {
+    width: 0%;
+    height: 2px;
+    background: $nau-cl;
+    transition: $trans-time;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    left: 0;
+  }
+  @include xs {
+    .container-fluid {
+      background: #000;
+      height: 60px;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .header__logo {
+      a {
+        img {
+          width: 150px;
+        }
+      }
+    }
+    .nav {
+      display: none;
+    }
+    .header__langue {
+      &-hiden {
+        display: table;
+      }
+    }
+    .nav__mobile {
+      display: none;
+    }
+  }
+}
