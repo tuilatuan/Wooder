@@ -1,0 +1,32 @@
+.footer {
+  margin-top: 120px;
+  height: 100px;
+  background: var(--black-cl);
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__text {
+    @include text(pr, var(--fs-bodym), var(--lh-bodym), var(--white-cl));
+    letter-spacing: 0.56px;
+    opacity: 0.5;
+  }
+  &__logo {
+    @include mid;
+  }
+  &__btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--white-cl);
+    padding: 6px 10px;
+    background-color: var(--gray-cl);
+    @include mid(true);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  @include xs {
+    margin-top: 60px;
+  }
+}

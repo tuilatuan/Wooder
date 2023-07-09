@@ -1,0 +1,190 @@
+.header {
+  z-index: 50;
+  position: relative;
+  .topbar {
+    width: 0%;
+    height: 2px;
+    background: var(--main-cl);
+    @include transition(var(--t));
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    left: 0;
+  }
+  .hidden {
+    display: none;
+  }
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    &.active {
+      background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+      height: 70px;
+    }
+  }
+
+  &__menu {
+    @include mid(false);
+    height: 100%;
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    .active {
+      color: var(--main-cl);
+    }
+    a {
+      position: relative;
+      letter-spacing: 0.1em;
+      @include transition(var(--t));
+      &:hover {
+        color: var(--main-cl);
+        @include transition(var(--t));
+        &::after {
+          overflow: hidden;
+          @include transform(scaleX(1));
+          @include transition(var(--t));
+        }
+      }
+      &::after {
+        content: "";
+        background: var(--main-cl);
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 20px;
+        @include transform(scaleX(0));
+        @include transition(var(--t));
+      }
+    }
+  }
+  &__lang {
+    height: 100%;
+    @include mid(true);
+    position: relative;
+    &-current {
+      @include mid(true);
+      flex-direction: row;
+      height: 100%;
+      span {
+        @include transition(var(--t));
+
+        &:hover {
+          color: var(--main-cl);
+          @include transition(var(--t));
+        }
+      }
+
+      i {
+        margin-left: 2px;
+      }
+      &.active {
+        span {
+          color: var(--main-cl);
+        }
+      }
+    }
+    &-option {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      background: var(--white-cl);
+      .--item {
+        color: var(--black-cl);
+        @include transition(var(--t));
+        padding: 2px 7px;
+        &:hover {
+          color: var(--main-cl);
+          @include transition(var(--t));
+        }
+      }
+      &.active {
+        display: flex;
+      }
+    }
+    &-btnmenu {
+      height: 20px;
+      width: 24px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      // gap: 5px;
+      margin-left: 26px;
+      position: relative;
+      z-index: 50;
+      .line {
+        width: 100%;
+        height: 2px;
+        background: var(--white-cl);
+        @include transition(var(--t));
+      }
+      &.active {
+        @include transition(var(--t));
+        pointer-events: auto;
+        .line:nth-child(1) {
+          @include transform(rotate(135deg) translate(7px, 0px));
+        }
+        .line:nth-child(2) {
+          @include visible(0);
+        }
+        .line:nth-child(3) {
+          @include transform(rotate(-135deg) translate(12px, 5px));
+        }
+        .header .header__logo {
+          @include visible(0);
+        }
+        .header .header__lang .header__lang-current {
+          @include visible(0);
+        }
+      }
+    }
+  }
+
+  @include xs {
+    &__menu {
+      display: none;
+    }
+    &__lang {
+      &-btnmenu {
+        display: flex;
+      }
+    }
+  }
+  &.active {
+    background: var(--black-cl);
+  }
+}
+.menu-mb {
+  width: 100%;
+  background: var(--black-cl);
+  height: 100vh;
+  position: fixed;
+  @include visible(0);
+  z-index: 45;
+  @include transition(var(--t));
+  .list {
+    width: 100%;
+    height: 100%;
+    @include mid(true);
+    flex-direction: column;
+    gap: 30px;
+    a {
+      @include text(pb, 2.2rem, 1.5rem, var(--white-cl));
+      letter-spacing: 1.76px;
+      text-transform: uppercase;
+      &.active {
+        color: var(--main-cl);
+      }
+    }
+  }
+  &.active {
+    pointer-events: auto;
+    @include visible;
+  }
+}
