@@ -34,17 +34,63 @@
 
     <style>
       /* CSS Loading Here */
+      .loading {
+        width: 100%;
+        height: 100vh;
+        background: var(--black-cl);
+        top: 0;
+        position: fixed;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .loading .loading__inner {
+        width: 160px;
+        height: 4px;
+        border-radius: 10px;
+        background: var(--white-cl);
+        position: relative;
+        overflow: hidden;
+      }
+      .loading .loading__inner .loading__inner-progess {
+        height: 100%;
+        width: 0%;
+        background: var(--main-cl);
+        position: absolute;
+      }
+
+      .loading .loading__percent {
+        font-family: pb;
+        font-size: var(--fs-text-btn);
+        line-height: var(--lh-text-btn);
+        color: var(--white-cl);
+        margin-top: 16px;
+        text-align: center;
+      }
+      .loading.--is-loaded {
+        visibility: hidden;
+        opacity: 0;
+      }
     </style>
 
     <link rel="stylesheet" href="dest/style.min.css" />
     <link rel="stylesheet" href="dest/fonts.css" />
   </head>
 
-  <body class="homepage">
-    <div class="loading"></div>
+  <body class="homepage --disable-scroll">
+    <div class="loading">
+      <div class="loading__inner">
+        <div class="loading__inner-progess"></div>
+      </div>
+      <div class="loading__percent"></div>
+    </div>
     <header class="header">
       <div class="topbar"></div>
-
       <div class="container-fluid">
         <div class="header__logo">
           <a href="#"
@@ -80,12 +126,12 @@
     </header>
     <div class="menu-mb">
       <nav class="list">
-        <a href="#" class="active">Home</a>
-        <a href="#" class="">Products</a>
-        <a href="#" class="">Video</a>
-        <a href="#" class="">About</a>
-        <a href="#" class="">Gallery</a>
-        <a href="#" class="">News</a>
+        <a href="#slider" class="active btntext">Home</a>
+        <a href="#product" class="btntext">Products</a>
+        <a href="#video" class="btntext">Video</a>
+        <a href="#about" class="btntext">About</a>
+        <a href="#gallery" class="btntext">Gallery</a>
+        <a href="#news" class="btntext">News</a>
       </nav>
     </div>
     <main class="main">

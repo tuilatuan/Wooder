@@ -28,5 +28,24 @@
   }
   @include xs {
     margin-top: 60px;
+    height: 92px;
+    .container {
+      flex-direction: column-reverse;
+      @include mid(1);
+      position: relative;
+    }
+    &__logo {
+      position: relative;
+      top: 0;
+      left: 0;
+      @include transform(translate(0, 0));
+      margin-bottom: 10px;
+    }
+    &__btn {
+      position: absolute;
+      right: 15px;
+      @include visible(0);
+      pointer-events: none;
+    }
   }
 }

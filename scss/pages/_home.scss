@@ -115,6 +115,9 @@
         }
       }
       @include xs {
+        .container-fluid {
+          margin-bottom: 17px;
+        }
         &-text {
           .numtxt {
             display: none;
@@ -208,7 +211,7 @@
             max-width: 100%;
           }
           .btnlearn {
-            margin-top: 25px;
+            margin-top: 17px;
           }
         }
         &.dec {
@@ -243,6 +246,7 @@
           height: 5px;
           left: 50%;
           position: absolute;
+          @include transform(translateX(-50%));
         }
       }
     }
@@ -297,7 +301,7 @@
             height: 3px;
             background: var(--main-cl);
             position: absolute;
-            bottom: -36px;
+            bottom: -38px;
             left: 50%;
             transform: translateX(-50%);
           }
@@ -305,9 +309,21 @@
       }
     }
     @include xs {
+      .container {
+        margin-bottom: 35px;
+      }
+      &__content {
+        .title {
+          margin-bottom: 25px;
+          &::after {
+            bottom: -13px;
+          }
+        }
+      }
       &__vidgrs {
         flex-direction: column;
-        gap: 41px;
+        gap: 30px;
+        padding-top: 0;
       }
     }
   }
@@ -415,6 +431,10 @@
         }
         .text {
           max-width: 100%;
+          margin-top: 7px;
+        }
+        .btnlearn {
+          margin-top: 20px;
         }
       }
     }

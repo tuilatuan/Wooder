@@ -26,7 +26,10 @@
       height: 70px;
     }
   }
-
+  .none {
+    opacity: 0;
+    pointer-events: none;
+  }
   &__menu {
     @include mid(false);
     height: 100%;

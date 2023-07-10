@@ -42,15 +42,21 @@ function selectLang() {
 selectLang();
 function menumobileHandle() {
   const btnmb = document.querySelector(".header__lang-btnmenu"),
-    menumb = document.querySelector(".menu-mb");
+    menumb = document.querySelector(".menu-mb"),
+    logo = document.querySelector(".header__logo"),
+    langCurrent = document.querySelector(".header__lang-current");
   //   console.log(btnmb);
   btnmb.addEventListener("click", function () {
     this.classList.toggle("active");
     menumb.classList.toggle("active");
+    logo.classList.toggle("none");
+    langCurrent.classList.toggle("none");
   });
   function hidenav() {
     btnmb.classList.remove("active");
     menumb.classList.remove("active");
+    logo.classList.remove("none");
+    langCurrent.classList.remove(".none");
   }
   window.addEventListener("resize", function () {
     let sz = window.innerWidth;
@@ -126,7 +132,6 @@ function removeActivemenu() {
 
 function scrollTosection() {
   let sections = [];
-
   menus.forEach(function (item, index) {
     let href = item.getAttribute("href");
     let className = href.replace("#", "");
@@ -158,6 +163,57 @@ function scrollTosection() {
   });
 }
 scrollTosection();
+function scrolltomobile() {
+  let navitem = document.querySelectorAll(".menu-mb nav a"),
+    heightheader = header.clientHeight,
+    hiden = document.querySelector(".header__lang-btnmenu"),
+    nav__mobile = document.querySelector(".menu-mb"),
+    logo = document.querySelector(".header__logo"),
+    langCurrent = document.querySelector(".header__lang-current");
+  console.log(hiden);
+  let sections = [];
+  function removenavactive() {
+    navitem.forEach(function (aitem) {
+      aitem.classList.remove("active");
+    });
+  }
+  navitem.forEach(function (item) {
+    let href = item.getAttribute("href");
+    let classname = href.replace("#", "");
+    let section = document.querySelector("." + classname);
+    sections.push(section);
+
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+      hiden.classList.toggle("active");
+      nav__mobile.classList.toggle("active");
+      logo.classList.toggle("none");
+      langCurrent.classList.toggle("none");
+      window.scrollTo({
+        top: section.offsetTop - (heightheader - 14),
+        behavior: "smooth",
+      });
+      removenavactive(navitem);
+      item.classList.add("active");
+    });
+  });
+
+  window.addEventListener("scroll", function (e) {
+    let scrollY = window.pageYOffset;
+    sections.forEach(function (section, index) {
+      if (
+        scrollY > section.offsetTop - heightheader &&
+        scrollY < section.offsetTop + section.clientHeight
+      ) {
+        removenavactive();
+        navitem[index].classList.add("active");
+      } else {
+        navitem[index].classList.remove("active");
+      }
+    });
+  });
+}
+scrolltomobile();
 function showSldier() {
   let slider = document.querySelector(".slider");
   let sliders = document.querySelector(".slider .slider__item-warp");
@@ -208,7 +264,6 @@ function showSliderimg() {
     var flkty = new Flickity(elem, {
       cellAlign: "left",
       // pageDots: true,
-      wrapAround: true,
       contain: true,
       imagesLoaded: true,
       prevNextButtons: false,
@@ -224,7 +279,6 @@ function showSliderimg() {
 showSliderimg();
 function showbackTotop() {
   let scrollY = window.pageYOffset;
-  console.log(scrollY);
 
   if (scrollY > getheightWindown) {
     btnTotop.classList.add("active");
@@ -258,3 +312,40 @@ document.addEventListener("scroll", function () {
 Fancybox.bind('[data-fancybox="galery"]', {
   //
 });
+function initLoaded() {
+  let loadedCount = 0,
+    imgs = document.querySelectorAll("img").length,
+    body = document.querySelector("body");
+
+  let imgLoaded = imagesLoaded(body);
+
+  imgLoaded
+    .on("progress", (instance) => {
+      loadedCount++;
+      percent = Math.floor((loadedCount / imgs) * 100);
+      handleLoading(percent);
+    })
+    .on("always", (instance) => {
+      console.log("always");
+    })
+    .on("fail", (instance) => {
+      console.log("fail");
+    })
+    .on("done", (instance) => {
+      console.log("done");
+      hideLoad();
+    });
+
+  function handleLoading(percent) {
+    const progess = document.querySelector(".loading__inner-progess"),
+      textProgess = document.querySelector(".loading__percent");
+    progess.style.width = `${percent}%`;
+    textProgess.innerHTML = `${percent}%`;
+  }
+  function hideLoad() {
+    let load = document.querySelector(".loading");
+    body.classList.remove("--disable-scroll");
+    load.classList.add("--is-loaded");
+  }
+}
+initLoaded();
