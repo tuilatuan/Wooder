@@ -133,6 +133,8 @@ function popupVideo() {
   videos.forEach(function (video) {
     video.addEventListener("click", function () {
       modalVideo.classList.add("active");
+      homepage.classList.add("--disable-scroll");
+
       let code = video.getAttribute("data-video-src");
       iframevideo.setAttribute("src", `https://www.youtube.com/embed/${code}?autoplay=1`);
     });
@@ -144,6 +146,7 @@ function popupVideo() {
     function closeModal() {
       modalVideo.classList.remove("active");
       iframevideo.setAttribute("src", ``);
+      homepage.classList.remove("--disable-scroll");
     }
     btnclose.addEventListener("click", function () {
       closeModal();
@@ -171,7 +174,7 @@ function scrollTosection() {
     item.addEventListener("click", function (e) {
       let positionSection = section.offsetTop;
       window.scrollTo({
-        top: positionSection - heightHeader + 1,
+        top: positionSection - heightHeader + 20,
         behavior: "smooth",
       });
       removeActivemenu();
@@ -205,6 +208,7 @@ function scrolltomobile() {
   function removenavactive() {
     navitem.forEach(function (aitem) {
       aitem.classList.remove("active");
+      homepage.classList.remove("--disable-scroll");
     });
   }
   navitem.forEach(function (item) {
@@ -219,8 +223,10 @@ function scrolltomobile() {
       nav__mobile.classList.toggle("active");
       logo.classList.toggle("none");
       langCurrent.classList.toggle("none");
+      homepage.classList.toggle("--disable-scroll");
+
       window.scrollTo({
-        top: section.offsetTop - (heightheader - 14),
+        top: section.offsetTop - (heightheader - 20),
         behavior: "smooth",
       });
       removenavactive(navitem);
@@ -281,8 +287,8 @@ function showSldier() {
       flkty.next();
     });
     function anigsap() {
-      gsap.fromTo(textalgin, { y: 200 }, { y: 0 });
-      gsap.fromTo(btnlearn, { y: 70 }, { y: 0 });
+      gsap.fromTo(textalgin, { y: 150 }, { y: 0 });
+      gsap.fromTo(btnlearn, { y: 50 }, { y: 0 });
     }
   }
 }
@@ -315,7 +321,7 @@ function showbackTotop() {
   } else {
     btnTotop.classList.remove("active");
   }
-  if (scrollY > 5550) {
+  if (scrollY > 5750) {
     btnTotop.classList.remove("active");
   }
 }

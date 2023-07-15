@@ -152,6 +152,7 @@
   }
 
   @include sm {
+    height: 64px;
     &__menu {
       display: none;
     }
@@ -163,6 +164,9 @@
   }
   &.active {
     background: var(--black-cl);
+    @include xs {
+      height: 64px;
+    }
   }
 }
 .menu-mb {

@@ -34,6 +34,9 @@
             width: max-content;
             height: 44px;
             margin-top: 17px;
+            @include xs {
+              margin-top: 9px;
+            }
           }
         }
         &-img {
@@ -328,10 +331,7 @@
         }
         &__content {
           .title {
-            margin-bottom: 25px;
-            &::after {
-              bottom: -13px;
-            }
+            margin-bottom: 15px;
           }
         }
         &__vidgrs {
@@ -343,6 +343,14 @@
         }
       }
       @include xs {
+        &__content {
+          .title {
+            margin-bottom: 8px;
+          }
+          .line {
+            margin-bottom: 10px;
+          }
+        }
         &__vidgrs {
           flex-direction: column;
         }
@@ -398,6 +406,8 @@
         }
       }
       @include sm {
+        padding-top: 90px;
+        padding-bottom: 90px;
         .container {
           padding-top: 76px;
           padding-bottom: 76px;
@@ -618,7 +628,7 @@
                   position: absolute;
                   top: -39px;
                   @include sm {
-                    top: -19px;
+                    top: -15px;
                   }
                 }
               }
@@ -695,8 +705,7 @@
         }
         &.active,
         &:hover {
-          color: var(--main-cl);
-          background: var(--gray-cl);
+          background: #9f9e9e;
         }
         &.active::after {
           content: "\2212";
@@ -747,10 +756,9 @@
       }
       @include sm {
         &__warp {
-          height: 320px;
-          max-height: 250px;
+          height: 350px;
+          max-height: 370px;
           .item {
-            max-height: 220px;
             margin-right: var(--gap);
           }
         }
@@ -764,6 +772,15 @@
           .progess-bar {
             background: var(--main-cl);
             height: 100%;
+          }
+        }
+      }
+      @include xs {
+        &__warp {
+          height: 220px;
+          max-height: 350px;
+          .item {
+            margin-right: var(--gap);
           }
         }
       }
