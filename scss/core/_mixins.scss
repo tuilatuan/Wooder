@@ -83,14 +83,7 @@
     @content;
   }
 }
-@keyframes srolldown {
-  form {
-    top: 0px;
-  }
-  to {
-    top: 30px;
-  }
-}
+
 @mixin animation($str) {
   animation: #{$str};
   -webkit-animation: #{$str};
@@ -136,13 +129,7 @@
 }
 
 // CSS Text
-@mixin text(
-  $font-family,
-  $font-size,
-  $line-height,
-  $color,
-  $text-transform: none
-) {
+@mixin text($font-family, $font-size, $line-height, $color, $text-transform: none) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
@@ -166,8 +153,8 @@
 
 // Middle Img
 @mixin midimg {
-  width: 101%;
-  height: 101%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   position: absolute;
   @include mid;

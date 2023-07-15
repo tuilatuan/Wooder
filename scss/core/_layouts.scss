@@ -34,11 +34,17 @@ body {
   }
   .main {
     position: relative;
-    section {
+    section.--pd {
+      padding: var(--pd-section) 0;
+    }
+    section.--pt {
       padding-top: var(--pd-section);
     }
+    section.--pb {
+      padding-bottom: var(--pd-section);
+    }
   }
-  @include xs {
+  @include sm {
     .container-fluid,
     .container {
       padding-right: 15px;
