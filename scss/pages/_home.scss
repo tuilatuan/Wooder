@@ -295,7 +295,7 @@
               top: 50%;
               left: 50%;
               @include transition(var(--t));
-              @include transform(scale(1) translate(-50%, -50%));
+              @include transform(translate(-50%, -50%) scale(1));
               .btn {
                 @include midimg;
                 height: 24px;
@@ -305,7 +305,7 @@
             &:hover {
               .btnplay {
                 @include transition(var(--t));
-                @include transform(scale(0.9) translate(-50%, -50%));
+                @include transform(translate(-50%, -50%) scale(0.9));
               }
             }
           }
@@ -504,22 +504,23 @@
         &-item {
           position: relative;
           overflow: hidden;
+          width: 100%;
           &:nth-child(3) {
             grid-area: 1/2/3/3;
           }
           img {
+            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
             top: 50%;
             left: 50%;
             @include transition(var(--t));
-            @include transform(scale(1) translate(-50%, -50%));
+            @include transform(translate(-50%, -50%) scale(1));
           }
           &:hover img {
             @include transition(var(--t));
-            @include transform(scale(1.05) translate(-50%, -50%));
+            @include transform(translate(-50%, -50%) scale(1.05));
           }
         }
       }
@@ -611,7 +612,7 @@
               }
               &:hover {
                 img {
-                  @include transform(scale(1.1) translate(-50%, -50%));
+                  @include transform(translate(-50%, -50%) scale(1.1));
                   @include transition(var(--t));
                 }
               }
