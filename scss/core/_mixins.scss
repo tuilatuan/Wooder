@@ -142,7 +142,7 @@
   @if $flex == false {
     top: 50%;
     left: 50%;
-    @include transform(translate(-50%, -50%));
+    @include transform(translate(-50%, -50%) scale(1));
     position: absolute;
   } @else {
     display: flex;

@@ -364,3 +364,4 @@ function accordion() {
   });
 }
 accordion();
+AOS.init();

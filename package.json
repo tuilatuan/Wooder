@@ -9,7 +9,7 @@
   "keywords": [
     "task"
   ],
-  "author": "Tran Nghia",
+  "author": "Kiet Rider",
   "license": "ISC",
   "devDependencies": {
     "grunt": "^1.2.1",
